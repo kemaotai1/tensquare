@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      uri: http://127.0.0.1:12000  # SpringCloudConfig服务端
+      name: base  # 应用名称
+      profile: dev  # 环境名称
+      label: master  # 仓库分支名称

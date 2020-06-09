@@ -1,0 +1,22 @@
+server:
+  port: 9010
+spring:
+  application:
+    name: tensquare-friend  # 微服务名称，如果只有单个微服务，服务名称没用。在服务间调用的时候，服务名称非常有用！！！
+  datasource: #数据源
+    url: jdbc:mysql://192.168.66.133:3306/tensquare_friend?characterEncoding=UTF8
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+  jpa: # jpa的参数
+    show-sql: true  # 是否打印sql
+    generate-ddl: true # 是否自动建表
+    database: mysql # 连接的数据库类型（可以省略）
+jwt:
+  config:
+    key: itcast
+    ttl: 1800000
+eureka:
+  client:
+    service-url:  # Eureka调用地址
+      defaultZone: http://127.0.0.1:6868/eureka

@@ -1,0 +1,24 @@
+server:
+  port: 9012
+spring:
+  application:
+    name: tensquare-manage
+eureka:
+  client:
+    service-url:  # Eureka调用地址
+      defaultZone: http://127.0.0.1:6868/eureka
+jwt:
+  config:
+    key: itcast
+    ttl: 1800000
+zuul:
+  routes:
+    tensquare-base:
+      path: /base/**
+      serviceId: tensquare-base
+    tensquare-qa:
+      path: /qa/**
+      serviceId: tensquare-qa
+    tensquare-user:
+      path: /user/**
+      serviceId: tensquare-user
